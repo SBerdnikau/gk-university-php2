@@ -12,8 +12,9 @@
 <div class="container">
     <ul>
         <li><a href="?c=user&a=users">Пользователи</a></li>
-        <li><a href="?a=insert">Добавить пользователя</a></li>
+        <li><a href="?c=user&a=insert">Добавить пользователя</a></li>
         <li><a href="?c=good&a=goods">Товары</a></li>
+        <li><a href="?c=good&a=insert">Добавить товар</a></li>
     </ul>
 </div>
 

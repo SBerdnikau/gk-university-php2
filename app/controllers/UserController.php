@@ -32,7 +32,7 @@ class UserController extends Controller
         $id = (int)$_GET['id'];
         $user = User::getOne($id);
         $user->delete();
-        header('Location: ?a=users');
+        header('Location: ?c=user&a=users');
     }
 
     public function insertAction()
@@ -43,7 +43,7 @@ class UserController extends Controller
             $user->login = $_POST['login'];
             $user->password = $_POST['password'];
             $user->save();
-            header('Location: ?a=users');
+            header('Location: ?c=user&a=users');
             exit;
         }
         echo $this->render('userInsert', []);

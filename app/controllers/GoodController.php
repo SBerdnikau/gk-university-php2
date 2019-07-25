@@ -27,4 +27,27 @@ class GoodController extends Controller
 
         echo $this->render("goods", $params);
     }
+
+    public function deleteAction()
+    {
+        $id = (int)$_GET['id'];
+        $good = Good::getOne($id);
+        $good->delete();
+        header('Location: ?c=good&a=goods');
+    }
+
+    public function insertAction()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $good = new Good();
+            $good->name = $_POST['name'];
+            $good->price = $_POST['price'];
+            $good->address= $_POST['address'];
+            $good->save();
+            header('Location: ?c=good&a=goods');
+            exit;
+        }
+        echo $this->render('goodInsert', []);
+    }
+
 }

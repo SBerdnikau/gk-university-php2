@@ -13,6 +13,7 @@ class User extends Model
 {
     protected $columns = [
         "id" => "",
+        "fio" => "",
         "login" => "",
         "password" => ""
     ];
