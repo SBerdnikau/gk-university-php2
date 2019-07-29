@@ -1,0 +1,15 @@
+<h1>Товары</h1>
+<div class="flex-catalog">
+    {% for good in goods %}
+        <div class="product">
+            <img class="product-img" src=" ../{{good.columns.address}}"  alt="img">
+            <h2 class="product-name">{{  good.columns.name }}</h2>
+            <div class="product-price">{{ good.columns.price }}</div>
+            <a href="/good/good?id={{ good.columns.id }}"> Подробнее </a>
+            <a href="/cart/add?id={{ good.columns.id }}"> Добавить в корзину </a>
+        </div>
+        <hr>
+    {% else %}
+        No users have been found.
+    {% endfor %}
+</div>
